@@ -1,0 +1,272 @@
+/*import text-font Poppins*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+:root 
+{
+    --color-white: #f3f3f3;
+    --color-vw: #006384;
+    --color-darkblue-alpha: rgba(27, 27, 50, 0.8);
+}
+/*Set box-sizing for all elements, element height and width included padding, border and actual width, height*/
+*,
+*::before,
+*::after 
+{
+    box-sizing: border-box;
+} 
+/*Set style for body*/
+body
+{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--color-white) !important;
+    margin: 0;
+}
+body::before 
+{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color:var(--color-vw);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+form 
+{
+    background: var(--color-darkblue-alpha);
+    padding: 2.5rem 0.625rem;
+    border-radius: 1rem;
+    margin-top: 4rem;
+    margin-right: 16rem;
+    margin-left: 16rem;
+}
+/* if the media screen is 480 pixels wide or wider, set padding of form group is 2.5rem*/
+@media (min-width: 480px) 
+{
+    form 
+    {
+      padding: 2.5rem;
+    }
+}
+input:hover,label:hover
+{
+    cursor: pointer;
+}
+/*Set style for h2*/
+h2
+{
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 3rem;
+}
+/*Set style for form element*/
+
+.button {
+    display: inline-block;
+    background-color: #76D7C4;
+    border: 1px;
+    border-radius: 1rem;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 24px;
+    padding: 15px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+  
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+ 
+.button:hover span {
+    padding-right: 25px;
+}
+  
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.container 
+{
+    width: 100%;
+    margin: 3.125rem auto 0 auto;
+}
+@media (min-width: 576px) 
+{
+    .container 
+    {
+      max-width: 540px;
+    }
+}
+  
+@media (min-width: 768px) 
+{
+    .container 
+    {
+      max-width: 720px;
+    }
+}
+
+.custom-file-input ~ .custom-file-label::after 
+{
+    background-color: #73C6B6;
+    color: var(--color-darkblue-alpha);
+    font-weight: 500;
+}
+
+.custom-file-label,
+.custom-file-label::after 
+{
+    height: 50px !important;
+    font-size: 20px;
+}
+.fade2 
+{
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all .2s linear;
+}
+
+.fade2.show 
+{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.fileupload
+{
+    color:#1E2832;
+    font-size:4em;
+}
+    
+    /*these two are set to not display at start*/
+.fileupload.ok
+{
+        
+    display:none;
+    color:green;
+    font-size:5rem;
+}
+.fileupload.stop
+{
+    display:none;
+    color:red;
+}
+.form-group 
+{
+    margin:0 auto 1.25rem auto;
+}
+.image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin: -5rem 0 0 -4rem;
+    -webkit-animation:spin 1s linear infinite;
+    -moz-animation:spin 1s linear infinite;
+    animation:spin 1s linear infinite;
+}
+.modal-dialog 
+{
+    max-width:  1000px !important;
+}
+.modal-content-size
+{
+    max-width: 1000px!important;
+    height: 300px!important;
+}
+.upload-button-div
+{
+    margin-top: 4rem;
+}
+.text-center 
+{
+    text-align: center;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }}
+
+#company-name
+{
+    background-color:#edf0f2;
+    background-image: url('./VW_Logo.png'); 
+    height: 120px; 
+    margin-top: 3rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#fakeButton
+{
+    display: block;
+    background-color: darkgray;
+    cursor: not-allowed;
+    padding:5px 40px;
+}
+#loader
+{
+    display: none;
+    opacity:0.8;
+    background-color:#ccc;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:1000;
+}
+
+#statusUpload
+{
+    color: green;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#statusModalButton
+{
+    margin: auto!important;
+    width: 6rem!important;
+    background-color: green;
+}
+#uploadingText
+{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 3rem 0 0 -3.5rem;
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+}
+#uploadButton
+{
+    display: none;
+    cursor: pointer;
+    color: var(--color-darkblue-alpha);
+    font-weight: 500;
+}

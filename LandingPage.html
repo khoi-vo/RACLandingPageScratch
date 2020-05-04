@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>RAC - Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" type="image/x-icon" href='./vw-favicon.ico'>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <script src="displayChosenFileName.js"></script>
+</head>
+
+<body>
+<div id="company-name"></div>
+<div class="container">
+    <h2 id="import-type" class="text-center">IMPORT TYPE</h2>
+    <form>
+        <div class="custom-file form-group">
+            <input type="file" class="custom-file-input form-control" id="customFile" name="filename" >
+            <label class="custom-file-label" for="customFile">Choose file: Only CSV File allowed!</label>
+        </div>
+        <div class = "upload-button-div" align="center">
+            <button type="button" class="button" disabled="disabled" id="fakeButton">Upload <i class="fa fa-minus-circle"></i></button>
+            <button type="button" class="button" id = "uploadButton"><span>Upload </span></button>
+        </div>
+    </form>
+</div>
+<!-- Wrong File Modal -->
+<div class="modal fade2" id="wrongFileModal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        
+        <!-- Modal body -->
+        <div class="modal-body text-center">
+            <h5 class="fileupload stop"><i class="fa fa-times"></i></h5>
+            <p id= "nameWrongFile"></p>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" id="wrongFileModalButton">Close</button>
+        </div>
+        
+      </div>
+    </div>
+</div>
+<!-- Status Modal -->
+<div class="modal fade2" id="statusModal" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered" align = "center">
+      <div class="modal-content modal-content-size">
+        
+        <!-- Modal body -->
+        <div class="modal-body text-center">
+            <h5 class="fileupload ok"><i class="fa fa-check"></i></h5>
+            <p id= "statusUpload"></p>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer text-center">
+          <button type="button" class="btn btn-danger" id="statusModalButton">OK</button>
+        </div>
+        
+      </div>
+    </div>
+</div>
+<!-- Loader -->
+<div id="loader">
+    <img class="image" src="./VW_Loader.png" alt="" width="120" height="120">
+    <p id="uploadingText">Uploading...</p>
+</div>
+</body>
+</html>
